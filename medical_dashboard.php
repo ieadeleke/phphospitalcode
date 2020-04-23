@@ -150,15 +150,19 @@
             </div>
             <div class="p-3 card-body">
               <?php
+              if(count($arr) > 0) {
                 for($i = 0; $i < count($arr); $i++) {
                   ?>
                   <h6><?= $arr[$i]->last_name ?> <?= $arr[$i]->first_name ?>
                   <small>(<?= $arr[$i]->date ?>, <?= $arr[$i]->time ?>)</small></h6>
+                  <small> <span class="dot"></span><?= $arr[$i]->nature ?></small>
                   <p><?=$arr[$i]->complaint?></p>
                   <hr>
               <?php
                 }
-              ?>
+              } else { ?>
+                <h6>You have no pending appointments</h6>
+             <?php } ?>
             </div>
           </div>
         </div>
